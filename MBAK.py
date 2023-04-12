@@ -63,7 +63,7 @@ class Main_Class():
 
 
     def Run(self):
-        if 'http' in self.URL:
+        if 'http' in self.URL and self.URL:
             self.Get_List()
             logger.info("Successfully loaded...")
             N = 10
@@ -99,7 +99,7 @@ def main():
             python3 {MBAK} -url "http://xxx.com/" 
             '''.format(MBAK=sys.argv[0]
                        )))
-    parser.add_argument('-url', '--URL', default='http://61.147.171.105:62346/xinan//public', help='Target_URL')
+    parser.add_argument('-url', '--URL', default='', help='Target_URL')
     args = parser.parse_args()
     Main_Class(args).Run()
 
